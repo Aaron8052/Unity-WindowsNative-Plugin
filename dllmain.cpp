@@ -1,12 +1,13 @@
-// dllmain.cpp : Defines the entry point for the DLL application.
-#include "pch.h"
+﻿// dllmain.cpp : Defines the entry point for the DLL application.
+
 #include "Utils.h"
 using namespace WindowsNative;
 
 extern "C"
 {
-    __declspec(dllexport) void Print(const wchar_t* str) {
-        Utils::Print(str);
+    //仅测试
+    __declspec(dllexport) int Print(int num) {
+        return num * 2;
     }
 }
 

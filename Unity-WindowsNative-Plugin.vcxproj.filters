@@ -24,10 +24,13 @@
     <ClInclude Include="framework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Notification.h">
+      <Filter>Source Files\WindowsNative</Filter>
+    </ClInclude>
+    <ClInclude Include="DesktopNotificationManagerCompat.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
       <Filter>Source Files\WindowsNative</Filter>
     </ClInclude>
   </ItemGroup>
@@ -35,10 +38,13 @@
     <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Notification.cpp">
+      <Filter>Source Files\WindowsNative</Filter>
+    </ClCompile>
+    <ClCompile Include="DesktopNotificationManagerCompat.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
       <Filter>Source Files\WindowsNative</Filter>
     </ClCompile>
   </ItemGroup>
