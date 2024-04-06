@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Unity_WindowsNative_Plugin",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Unity_WindowsNative_Plugin::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Unity_WindowsNative_Plugin-Debug-b3b2fcc79345d62be6c9.json",
+					"name" : "Unity_WindowsNative_Plugin",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "F:/Users/jiang/Documents/GitHub/Unity-WindowsNative-Plugin/cmake-build-debug",
+		"source" : "F:/Users/jiang/Documents/GitHub/Unity-WindowsNative-Plugin"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
