@@ -155,20 +155,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="cpp.hint" />
+    <ClInclude Include="src\Native\Desktop.h" />
+    <ClInclude Include="src\lib\DesktopNotificationManagerCompat.h" />
+    <ClInclude Include="src\Native\Notification.h" />
+    <ClInclude Include="src\Native\Utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Desktop.h" />
-    <ClInclude Include="DesktopNotificationManagerCompat.h" />
-    <ClInclude Include="Notification.h" />
-    <ClInclude Include="Utils.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Desktop.cpp" />
-    <ClCompile Include="DesktopNotificationManagerCompat.cpp" />
-    <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="Notification.cpp" />
-    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="src\Native\Desktop.cpp" />
+    <ClCompile Include="src\lib\DesktopNotificationManagerCompat.cpp" />
+    <ClCompile Include="src\dllmain.cpp" />
+    <ClCompile Include="src\Native\Notification.cpp" />
+    <ClCompile Include="src\Native\Utils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
