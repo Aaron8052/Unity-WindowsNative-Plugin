@@ -31,35 +31,41 @@
 > 获取当前鼠标像素位置（左上原点）
 - C#调用示例
 
-`
+```
 using System.Runtime.InteropServices;
+
 //引入DLL以及函数
 [DllImport("UnityWindowsNativePlugin.dll")]
 public static extern void GetCursorPosition(ref int pixelX, ref int pixelY);
+
 void PrintCursorPosition()
 {
 	int x = 0;
 	int y = 0;
+
 	//传入int指针到C++对应的方法中
 	GetCursorPosition(ref x, ref y);
+
 	//调用GetCursorPosition之后x和y会被修改为当前光标位置
 	Debug.Log("Cursor position: " + x + ", " + y);
 }
-`
+```
 
 #### `void SetCursorPosition(int pixelX, int pixelY) `
 > 设置当前鼠标像素位置（左上原点）
 - C#调用示例
 
-`
+```
 using System.Runtime.InteropServices;
+
 //引入DLL以及函数
 [DllImport("UnityWindowsNativePlugin.dll")]
 public static extern void SetCursorPosition(int pixelX, int pixelY);
+
 void SetCursorPosition()
 {
 	int x = 50;
 	int y = 50;
 	SetCursorPosition(x, y);
 }
-`
+```
