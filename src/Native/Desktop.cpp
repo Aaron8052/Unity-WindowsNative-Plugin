@@ -1,4 +1,5 @@
 #include "Desktop.h"
+#include <Windows.h>
 
 void WindowsNative::Desktop::SetCursorPosition(int pixelX, int pixelY)
 {
