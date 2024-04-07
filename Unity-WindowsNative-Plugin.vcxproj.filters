@@ -21,9 +21,6 @@
     <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Notification.h">
       <Filter>Source Files\WindowsNative</Filter>
     </ClInclude>
@@ -31,6 +28,9 @@
       <Filter>Resource Files</Filter>
     </ClInclude>
     <ClInclude Include="Utils.h">
+      <Filter>Source Files\WindowsNative</Filter>
+    </ClInclude>
+    <ClInclude Include="Desktop.h">
       <Filter>Source Files\WindowsNative</Filter>
     </ClInclude>
   </ItemGroup>
@@ -46,6 +46,9 @@
     </ClCompile>
     <ClCompile Include="Utils.cpp">
       <Filter>Source Files\WindowsNative</Filter>
+    </ClCompile>
+    <ClCompile Include="Desktop.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

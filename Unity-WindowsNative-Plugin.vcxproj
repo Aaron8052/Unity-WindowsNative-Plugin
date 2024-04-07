@@ -158,12 +158,13 @@
     <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Desktop.h" />
     <ClInclude Include="DesktopNotificationManagerCompat.h" />
-    <ClInclude Include="framework.h" />
     <ClInclude Include="Notification.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Desktop.cpp" />
     <ClCompile Include="DesktopNotificationManagerCompat.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Notification.cpp" />
