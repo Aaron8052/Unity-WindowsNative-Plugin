@@ -6,7 +6,7 @@
 
 
 ## 功能介绍、示例
-### Windows桌面相关功能
+### 'Desktop.cpp' Windows桌面相关功能
 
 #### `void GetCursorPosition(int* pixelX, int* pixelY)`
 > 获取当前鼠标像素位置（左上原点）
