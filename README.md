@@ -5,12 +5,11 @@
 - [Visual Studio 2022 Community](https://visualstudio.microsoft.com/vs/community/)
 
 
-## 功能介绍、示例
+## 功能介绍、C#示例
 ### `Desktop.cpp` Windows桌面相关功能
 
 #### `void GetCursorPosition(int* pixelX, int* pixelY)`
 > 获取当前鼠标像素位置（左上原点）
-- C#调用示例
 
 ```
 using System.Runtime.InteropServices;
@@ -34,7 +33,6 @@ void PrintCursorPosition()
 
 #### `void SetCursorPosition(int pixelX, int pixelY) `
 > 设置当前鼠标像素位置（左上原点）
-- C#调用示例
 
 ```
 using System.Runtime.InteropServices;
