@@ -2,7 +2,6 @@
 为本人的Unity游戏项目编写的Windows C++原生插件，仅对外作为参考用途，因此不提供完整的C#端代码，请自行参考下方文档
 
 ## IDE
-### C++
 - [Visual Studio 2022 Community](https://visualstudio.microsoft.com/vs/community/)
 
 
