@@ -6,7 +6,7 @@
 
 
 ## 功能介绍、C#示例
-### `Application.cpp` Windows应用、窗口相关功能
+### `Desktop.cpp` Windows桌面相关功能
 
 #### `const wchar_t* GetWindowTitle()`
 > 获取当前窗口标题
@@ -50,7 +50,7 @@ public static string GameWindowTitle
 }
 ```
 
-### `Desktop.cpp` Windows桌面相关功能
+
 #### `void GetCursorPosition(int* pixelX, int* pixelY)`
 > 获取当前鼠标像素位置（左上原点）
 

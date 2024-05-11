@@ -4,7 +4,6 @@
 
 #include "Native/Utils.h"
 #include "Native/Desktop.h"
-#include "Native/Application.h"
 using namespace WindowsNative;
 
 extern "C"
@@ -21,17 +20,17 @@ extern "C"
 
     EXPORT void SetWindowTitle(const wchar_t* title) 
     {
-        Application::SetWindowTitle(title);
+        Desktop::SetWindowTitle(title);
     }
 
     EXPORT const wchar_t* GetWindowTitle() 
     {
-        return Application::GetWindowTitle();
+        return Desktop::GetWindowTitle();
     }
 
     EXPORT void ReleaseWindowTitlePtr() 
     {
-        Application::ReleaseWindowTitlePtr();
+        Desktop::ReleaseWindowTitlePtr();
     }
 }
 
