@@ -15,7 +15,7 @@
 > 更改窗口标题
 
 #### `void ReleaseWindowTitlePtr()`
-> 用于释放 `GetWindowTitle()` 调用时动态创建的字符串（无需手动调用，每次调用 `GetWindowTitle()` 时会自动释放一次）
+> 用于释放 [`GetWindowTitle()`](#const-wchar_t-getwindowtitle) 调用时动态创建的字符串（无需手动调用，每次调用 [`GetWindowTitle()`](#const-wchar_t-getwindowtitle) 时会自动释放一次）
 
 ```
 //该代码示例仅在unsafe上下文中可用
