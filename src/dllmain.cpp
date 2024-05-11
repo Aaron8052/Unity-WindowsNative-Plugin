@@ -32,5 +32,10 @@ extern "C"
     {
         Desktop::ReleaseWindowTitlePtr();
     }
+
+    EXPORT bool ShowDialog(const wchar_t* title, const wchar_t* message, int iconType) 
+    {
+        return Desktop::ShowDialog(title, message, (IconType)iconType);
+    }
 }
 
