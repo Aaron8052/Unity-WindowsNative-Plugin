@@ -7,7 +7,54 @@
 
 ## 功能介绍、C#示例
 ### `Desktop.cpp` Windows桌面相关功能
+-----------------------
+#### `bool ShowDialog(const wchar_t* title, const wchar_t* message, int iconType, int buttonType)`
+> 显示对话框
 
+```
+//该代码示例仅在unsafe上下文中可用
+
+using System.Runtime.InteropServices;
+
+const string DllName = "UnityWindowsNativePlugin.dll";
+
+[DllImport(DllName)]
+static extern bool ShowDialog(char* title, char* message, int iconType, int buttonType);
+
+// 可选择对话框中的图标
+public enum IconType
+{
+    None = 0,
+    Hand,
+    Question,
+    Exclamation,
+    Asterisk,
+    Warning,
+    Information,
+    Error,
+    Stop,
+};
+
+// 可选择对话框下方的按钮
+public enum ButtonType
+{
+    YesNo = 0,
+    Ok,
+    OkCancel,
+};
+
+public static bool ShowDialog(string title, string message, IconType iconType = IconType.Warning, ButtonType buttonType = ButtonType.Ok)
+{
+    fixed (char* titlePtr = title)
+    {
+        fixed (char* messagePtr = message)
+        {
+            return ShowDialog(titlePtr, messagePtr, (int)iconType, (int)buttonType);
+        }
+    }
+}
+```
+-----------------------
 #### `const wchar_t* GetWindowTitle()`
 > 获取当前窗口标题
 
@@ -50,7 +97,7 @@ public static string GameWindowTitle
 }
 ```
 
-
+-----------------------
 #### `void GetCursorPosition(int* pixelX, int* pixelY)`
 > 获取当前鼠标像素位置（左上原点）
 
