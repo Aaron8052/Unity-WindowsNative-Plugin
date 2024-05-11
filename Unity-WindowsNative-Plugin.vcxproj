@@ -143,8 +143,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;UNITYWINDOWSNATIVEPLUGIN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -155,16 +157,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Native\Application.h" />
     <ClInclude Include="src\Native\Desktop.h" />
-    <ClInclude Include="src\lib\DesktopNotificationManagerCompat.h" />
-    <ClInclude Include="src\Native\Notification.h" />
     <ClInclude Include="src\Native\Utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Native\Application.cpp" />
     <ClCompile Include="src\Native\Desktop.cpp" />
-    <ClCompile Include="src\lib\DesktopNotificationManagerCompat.cpp" />
     <ClCompile Include="src\dllmain.cpp" />
-    <ClCompile Include="src\Native\Notification.cpp" />
     <ClCompile Include="src\Native\Utils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

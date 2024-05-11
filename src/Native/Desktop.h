@@ -1,3 +1,5 @@
+#include <Windows.h>
+
 namespace WindowsNative
 {
 	namespace Desktop

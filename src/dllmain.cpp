@@ -4,7 +4,7 @@
 
 #include "Native/Utils.h"
 #include "Native/Desktop.h"
-
+#include "Native/Application.h"
 using namespace WindowsNative;
 
 extern "C"
@@ -19,10 +19,19 @@ extern "C"
         Desktop::SetCursorPosition(pixelX, pixelY);
     }
 
-    //仅测试
-    EXPORT int Print(int num) 
+    EXPORT void SetWindowTitle(const wchar_t* title) 
     {
-        return num * 2;
+        Application::SetWindowTitle(title);
+    }
+
+    EXPORT const wchar_t* GetWindowTitle() 
+    {
+        return Application::GetWindowTitle();
+    }
+
+    EXPORT void ReleaseWindowTitlePtr() 
+    {
+        Application::ReleaseWindowTitlePtr();
     }
 }
 

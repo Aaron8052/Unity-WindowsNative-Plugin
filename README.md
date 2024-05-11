@@ -8,6 +8,49 @@
 ## 功能介绍、C#示例
 ### `Desktop.cpp` Windows桌面相关功能
 
+#### `const wchar_t* GetWindowTitle()`
+> 获取当前窗口标题
+
+#### `void SetWindowTitle(const wchar_t* title)`
+> 更改窗口标题
+
+#### `void ReleaseWindowTitlePtr()`
+> 用于释放 `GetWindowTitle()` 调用时动态创建的字符串（无需手动调用，每次调用 `GetWindowTitle()` 时会自动释放一次）
+
+```
+//该代码示例仅在unsafe上下文中可用
+
+using System.Runtime.InteropServices;
+
+const string DllName = "UnityWindowsNativePlugin.dll";
+[DllImport(DllName)] static extern void SetWindowTitle(char* title);
+[DllImport(DllName)] static extern char* GetWindowTitle();
+[DllImport(DllName)] static extern void ReleaseWindowTitlePtr();
+
+public static string GameWindowTitle
+{
+    get
+    {
+        var titlePtr = GetWindowTitle();        //调用C++代码返回一个窗口标题字符串指针
+        if(titlePtr == null)                    //判断指针是否为空
+            return string.Empty;
+        var title = new string(titlePtr);       //将字符串指针转换为C#的string
+        ReleaseWindowTitlePtr();                //释放C++动态分配的指针
+        return title;
+    }
+    set
+    {
+        var title = value ?? string.Empty;
+
+        fixed (char* titlePtr = title)
+        {
+            SetWindowTitle(titlePtr);
+        }
+    }
+}
+```
+
+
 #### `void GetCursorPosition(int* pixelX, int* pixelY)`
 > 获取当前鼠标像素位置（左上原点）
 
