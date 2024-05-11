@@ -14,7 +14,12 @@ namespace WindowsNative
 		Error,
 		Stop,
 	};
-
+	typedef enum ButtonType
+	{
+		YesNo = 0,
+		Ok,
+		OkCancel,
+	};
 	namespace Desktop
 	{
 		HWND GetWindow();
@@ -25,6 +30,6 @@ namespace WindowsNative
 		void ReleaseWindowTitlePtr();
 		void SetCursorPosition(int, int);
 		void GetCursorPosition(int*, int*);
-		bool ShowDialog(const wchar_t*, const wchar_t*, IconType iconType);
+		bool ShowDialog(const wchar_t*, const wchar_t*, IconType iconType, ButtonType buttonType);
 	}
 }

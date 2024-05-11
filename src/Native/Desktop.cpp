@@ -60,51 +60,61 @@ void WindowsNative::Desktop::GetCursorPosition(int* pixelX, int* pixelY)
 	*pixelY = cursorPos.y;
 }
 
-bool WindowsNative::Desktop::ShowDialog(const wchar_t* title, const wchar_t* message, IconType iconType)
+
+
+bool WindowsNative::Desktop::ShowDialog(const wchar_t* title, const wchar_t* message, IconType iconType, ButtonType buttonType)
 {
+    long button = 0L;
+    switch (buttonType)
+    {
+        case WindowsNative::YesNo:
+            button = MB_YESNO;
+            break;
+        
+        case WindowsNative::OkCancel:
+            button = MB_OKCANCEL;
+            break;
+
+        default:
+        case WindowsNative::Ok:
+            button = MB_OK;
+            break;
+    }
+
     long icon = 0L;
     switch (iconType)
     {
-    case Hand:
-        icon = MB_ICONHAND | MB_YESNO;
-        break;
-    case Question:
-        icon = MB_ICONQUESTION | MB_YESNO;
-        break;
-    case Exclamation:
-        icon = MB_ICONEXCLAMATION | MB_YESNO;
-        break;
-    case Asterisk:
-        icon = MB_ICONASTERISK | MB_YESNO;
-        break;
-    case Warning:
-        icon = MB_ICONWARNING | MB_YESNO;
-        break;
-    case Information:
-        icon = MB_ICONINFORMATION | MB_YESNO;
-        break;
-    case Error:
-        icon = MB_ICONERROR | MB_YESNO;
-        break;
-    case Stop:
-        icon = MB_ICONSTOP | MB_YESNO;
-        break;
-    default:
-        icon = MB_YESNO;
-        break;
+        case Hand:
+            icon = MB_ICONHAND;
+            break;
+        case Question:
+            icon = MB_ICONQUESTION;
+            break;
+        case Exclamation:
+            icon = MB_ICONEXCLAMATION;
+            break;
+        case Asterisk:
+            icon = MB_ICONASTERISK;
+            break;
+        case Information:
+            icon = MB_ICONINFORMATION;
+            break;
+        case Error:
+            icon = MB_ICONERROR;
+            break;
+        case Stop:
+            icon = MB_ICONSTOP;
+            break;
+
+        default:
+        case Warning:
+            icon = MB_ICONWARNING;
+            break;
     }
 
-    int msgboxID = MessageBox(
-        GetForegroundWindow(),
-        message,
-        title,
-        icon | MB_TOPMOST
-    );
-
-    if (msgboxID == IDYES)
-    {
-        return true;
-    }
-
-    return false;
+    long defaultButton = button == MB_OK ? MB_DEFBUTTON1 : MB_DEFBUTTON2;
+    HWND window = GetWindow(); //GetForegroundWindow()
+    int msgboxID = MessageBox(NULL, message, title, icon | button | defaultButton | MB_TOPMOST); //第一个参数不要填入window，否则一旦玩家没有对对话框做出回应，直接返回游戏窗口后则无法再点击对话框
+    SetForegroundWindow(window); // 将游戏窗口带回到前台
+    return msgboxID == IDYES;
 }
