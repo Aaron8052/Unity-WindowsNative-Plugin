@@ -45,6 +45,7 @@ public enum ButtonType
 
 public static bool ShowDialog(string title, string message, IconType iconType = IconType.Warning, ButtonType buttonType = ButtonType.Ok)
 {
+    message = message.Replace("\\n", "\n");
     fixed (char* titlePtr = title)
     {
         fixed (char* messagePtr = message)
