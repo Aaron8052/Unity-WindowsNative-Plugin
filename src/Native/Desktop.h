@@ -20,16 +20,18 @@ namespace WindowsNative
 		Ok,
 		OkCancel,
 	};
-	namespace Desktop
+	class Desktop
 	{
-		HWND GetWindow();
-		void GetWindowPosition(int*, int*, int*, int*);
-		void SetWindowPosition(int, int);
-		const wchar_t* GetWindowTitle();
-		void SetWindowTitle(const wchar_t*);
-		void ReleaseWindowTitlePtr();
-		void SetCursorPosition(int, int);
-		void GetCursorPosition(int*, int*);
-		bool ShowDialog(const wchar_t*, const wchar_t*, IconType iconType, ButtonType buttonType);
-	}
+	private:
+		static HWND GetWindow();
+	public:
+		static void GetWindowPosition(int*, int*, int*, int*);
+		static void SetWindowPosition(int, int);
+		static const wchar_t* GetWindowTitle();
+		static void SetWindowTitle(const wchar_t*);
+		static void ReleaseWindowTitlePtr();
+		static void SetCursorPosition(int, int);
+		static void GetCursorPosition(int*, int*);
+		static bool ShowDialog(const wchar_t*, const wchar_t*, IconType iconType, ButtonType buttonType);
+	};
 }
